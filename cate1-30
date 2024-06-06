@@ -1,0 +1,19 @@
+def max_path_sum(triangle):
+    # Start from the second last row
+    for i in range(len(triangle) - 2, -1, -1):
+        for j in range(len(triangle[i])):
+            # Add the maximum of the two cells below it to the current cell
+            triangle[i][j] += max(triangle[i + 1][j], triangle[i + 1][j + 1])
+    # The sum of digits will be in the top cell
+    return triangle[0][0]
+
+# Example usage
+triangle = [
+    [3],
+    [7, 4],
+    [2, 4, 6],
+    [8, 5, 9, 3]
+]
+
+sum_of_digits = max_path_sum(triangle)
+print("Sum of all digits in the triangle:", sum_of_digits)
