@@ -1,0 +1,19 @@
+def distinct_ways_to_climb_stairs(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    
+    prev1 = 1  # Number of ways to reach the 1st step
+    prev2 = 2  # Number of ways to reach the 2nd step
+    
+    for i in range(3, n + 1):
+        current = prev1 + prev2
+        prev1, prev2 = prev2, current
+    
+    return prev2
+
+# Example usage
+n = int(input("Enter the number of steps: "))
+ways = distinct_ways_to_climb_stairs(n)
+print("Number of distinct ways to climb to the top:", ways)
