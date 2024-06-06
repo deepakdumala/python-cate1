@@ -1,0 +1,20 @@
+from itertools import permutations
+
+def unique_permutations(number):
+    # Convert the number to a list of digits
+    digits = list(str(number))
+    
+    # Generate all permutations of the digits
+    perms = set(permutations(digits))
+    
+    # Convert each permutation back to a number and add to the result set
+    unique_perms = {int(''.join(perm)) for perm in perms}
+    
+    return unique_perms
+
+# Example usage
+number = 123
+unique_perms = unique_permutations(number)
+print("Unique permutations of", number, ":")
+for perm in unique_perms:
+    print(perm)
