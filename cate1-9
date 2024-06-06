@@ -1,0 +1,30 @@
+def is_tech_number(number):
+    # Convert the number to a string to iterate over its digits
+    num_str = str(number)
+    
+    # Initialize variables to store the sum of digits and sum of digits at even places
+    sum_of_digits = 0
+    sum_of_even_digits = 0
+    
+    # Iterate over the digits of the number
+    for i, digit in enumerate(num_str, start=1):
+        # Convert digit to integer
+        digit_value = int(digit)
+        
+        # Update the sum of digits
+        sum_of_digits += digit_value
+        
+        # Check if the position of the digit is even
+        if i % 2 == 0:
+            # Update the sum of digits at even places
+            sum_of_even_digits += digit_value
+    
+    # Check if both sums are even
+    return sum_of_digits % 2 == 0 and sum_of_even_digits % 2 == 0
+
+# Example usage
+number = 2468
+if is_tech_number(number):
+    print(f"{number} is a Tech number.")
+else:
+    print(f"{number} is not a Tech number.")
