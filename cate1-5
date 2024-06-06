@@ -1,0 +1,11 @@
+def sum_of_digits(number):
+    sum_digits = 0
+    while number > 0:
+        sum_digits += number % 10
+        number //= 10
+    return sum_digits
+
+# Example usage
+N_digit_number = 123456789
+sum_of_digits_result = sum_of_digits(N_digit_number)
+print("Sum of digits of the", len(str(N_digit_number)), "digit number:", sum_of_digits_result)
