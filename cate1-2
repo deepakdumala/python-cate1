@@ -1,0 +1,17 @@
+import datetime
+
+def is_leap_year(year):
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+
+def find_anniversary(year, anniversary):
+    if is_leap_year(year):
+        next_anniversary = datetime.date(year + 1, *anniversary)
+        print("Next anniversary (leap year):", next_anniversary)
+    else:
+        previous_anniversary = datetime.date(year - 1, *anniversary)
+        print("Previous anniversary (not a leap year):", previous_anniversary)
+
+# Example usage
+year = 2024
+anniversary = (6, 6)  # Anniversary date (month, day)
+find_anniversary(year, anniversary)
