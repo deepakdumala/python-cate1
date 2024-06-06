@@ -1,0 +1,12 @@
+import calendar
+
+def display_calendar(year, month):
+    # Generate the calendar for the specified year and month
+    cal = calendar.month(year, month)
+    return cal
+
+# Example usage
+year = int(input("Enter the year: "))
+month = int(input("Enter the month (1-12): "))
+print("\nCalendar:")
+print(display_calendar(year, month))
