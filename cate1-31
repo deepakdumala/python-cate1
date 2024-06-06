@@ -1,0 +1,12 @@
+def fibonacci_series(n):
+    series = [0, 1]  # Initialize the series with the first two Fibonacci numbers
+    while len(series) < n:
+        next_number = series[-1] + series[-2]  # Compute the next Fibonacci number
+        series.append(next_number)  # Add the next Fibonacci number to the series
+    return series
+
+# Example usage
+num_terms = int(input("Enter the number of terms in the Fibonacci series: "))
+fib_series = fibonacci_series(num_terms)
+print("Fibonacci series up to", num_terms, "terms:")
+print(fib_series)
