@@ -1,0 +1,31 @@
+def binary_to_decimal(binary):
+    decimal = 0
+    power = len(binary) - 1
+    for bit in binary:
+        decimal += int(bit) * (2 ** power)
+        power -= 1
+    return decimal
+
+def greatest_of_three_binary(binary1, binary2, binary3):
+    decimal1 = binary_to_decimal(binary1)
+    decimal2 = binary_to_decimal(binary2)
+    decimal3 = binary_to_decimal(binary3)
+    
+    greatest_decimal = max(decimal1, decimal2, decimal3)
+    
+    if greatest_decimal == decimal1:
+        return binary1
+    elif greatest_decimal == decimal2:
+        return binary2
+    else:
+        return binary3
+
+# Example usage
+binary1 = "1101"
+binary2 = "101"
+binary3 = "1110"
+greatest_binary = greatest_of_three_binary(binary1, binary2, binary3)
+print("Binary 1:", binary1)
+print("Binary 2:", binary2)
+print("Binary 3:", binary3)
+print("Greatest binary number:", greatest_binary)
