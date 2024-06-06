@@ -1,0 +1,22 @@
+def boundary_elements_sum(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
+    boundary_sum = 0
+    
+    for i in range(rows):
+        for j in range(cols):
+            if i == 0 or i == rows - 1 or j == 0 or j == cols - 1:
+                boundary_sum += matrix[i][j]
+    
+    return boundary_sum
+
+# Example usage
+matrix = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 16]
+]
+
+boundary_sum = boundary_elements_sum(matrix)
+print("Boundary Elements Sum:", boundary_sum)
