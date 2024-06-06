@@ -1,0 +1,24 @@
+from datetime import datetime
+
+def difference_between_dates(date1, date2):
+    date_format = "%Y-%m-%d"  # Define the date format
+    try:
+        # Parse the dates into datetime objects
+        datetime1 = datetime.strptime(date1, date_format)
+        datetime2 = datetime.strptime(date2, date_format)
+        
+        # Calculate the difference between the dates
+        difference = datetime2 - datetime1
+        
+        # Extract the difference in days
+        difference_in_days = difference.days
+        
+        return difference_in_days
+    except ValueError:
+        return "Invalid date format. Please use YYYY-MM-DD."
+
+# Example usage
+date1 = input("Enter the first date (YYYY-MM-DD): ")
+date2 = input("Enter the second date (YYYY-MM-DD): ")
+difference = difference_between_dates(date1, date2)
+print("Difference between the two dates:", difference, "days")
