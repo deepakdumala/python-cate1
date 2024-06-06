@@ -1,0 +1,20 @@
+def add_binary(binary1, binary2):
+    # Convert binary strings to integers
+    num1 = int(binary1, 2)
+    num2 = int(binary2, 2)
+    
+    # Add the integers
+    result = num1 + num2
+    
+    # Convert the result back to binary
+    result_binary = bin(result)[2:]  # Remove '0b' prefix from binary string
+    
+    return result_binary
+
+# Example usage
+binary1 = "1101"
+binary2 = "101"
+sum_binary = add_binary(binary1, binary2)
+print("Binary 1:", binary1)
+print("Binary 2:", binary2)
+print("Sum:", sum_binary)
